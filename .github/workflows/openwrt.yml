@@ -9,15 +9,20 @@
 
 name: OpenWrt
 
-on:
-  push:
-    branches: 
-      - master
-  schedule:
-    - cron: 0 0 1 * *
-  watch:
-    types: started
+on: 
+  release:
+    types: [published]
 
+  #push:
+  #  branches: 
+  #    - master
+
+  #schedule:
+  #  - cron: 0 8 * * 5
+  
+  watch:
+    types: [started]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
